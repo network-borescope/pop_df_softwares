@@ -25,6 +25,6 @@ echo "dns_tinycubes"
 /usr/sbin/tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} udp port 53 | python3 dns_tinycubes.py
 echo "done"
 
-# echo "iteracoes_dns"
-# /usr/sbin/tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} | python3 iteracoes_dns_modv3.py
-# echo "done"
+echo "iteracoes_dns"
+/usr/sbin/tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} | python3 iteracoes_dns_modv3.py
+echo "done"
