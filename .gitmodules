@@ -1,3 +1,6 @@
 [submodule "filter_c"]
 	path = filter_c
 	url = https://github.com/tinycubes/tcpdump_filter_c
+[submodule "get_perfsonar_data"]
+	path = get_perfsonar_data
+	url = https://github.com/tinycubes/get_perfsonar_data.git
