@@ -5,7 +5,9 @@ Este script em Python implementa um processador de tráfego coletado que relacio
 
 O script é executado utilizando "pipe" na saída do TCPDump ao ler um arquivo PCAP.
 
-``tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} | python3 iteracoes_dns_modv3.py``
+```Shell
+tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} | python3 iteracoes_dns_modv3.py
+```
 
 O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e possui formatação de acordo com o exemplo a seguir.
 
@@ -40,7 +42,9 @@ Este script em Python implementa um processador de tráfego coletado que gera in
 
 O script é executado utilizando "pipe" na saída do TCPDump ao ler um arquivo PCAP.
 
-``tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} udp port 53 | python3 dns_tinycubes.py``
+```Shell
+tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} udp port 53 | python3 dns_tinycubes.py
+```
 
 O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e possui formatação de acordo com o exemplo a seguir.
 
@@ -73,7 +77,9 @@ Este script em Python implementa um processador de tráfego coletado que gera um
 
 O script é executado utilizando "pipe" na saída do TCPDump ao ler um arquivo PCAP.
 
-``tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} tcp | python3 filter_latlon.py``
+```Shell
+tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} tcp | python3 filter_latlon.py
+```
 
 O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e possui formatação de acordo com o exemplo a seguir.
 
