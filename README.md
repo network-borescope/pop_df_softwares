@@ -118,16 +118,13 @@ Este programa desenvolvido em C roda continuamente e tem como objetivo filtrar o
 
 O programa é executado utilizando o script abaixo.
 
-``
+```Shell
 #!/bin/bash
-
 internal_ether="cc:4e:24:42:55:0d"
-
 nohup $SHELL <<EOF > /dev/null &
-
 sudo tcpdump -l -U -vvv -n -tttt -i bond1 ether src ${internal_ether}  "$@"  | ./filter_c
-
-EOF``
+EOF
+```
 
 O programa gera arquivos, a cada minuto, no padrão aceito pelo Tinycubes e possui formatação de acordo com o exemplo a seguir.
 
