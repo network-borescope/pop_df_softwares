@@ -16,7 +16,7 @@ O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e pos
 1) data no formato YYYY-MM-DD: 2021-07-03
 2) dia da semana: 7
 3) hora: 16
-4) id do client: 55
+4) id do cliente: 55
 5) ip de origem da requisição DNS: 200.130.17.1
 6) distância da requisição DNS: 4
 7) TTL da requisição DNS: 124
@@ -51,8 +51,8 @@ O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e pos
 2021-08-24 19:17:00;-15.816786;-47.943379;1;55;123;5;1;470;340;1;1;184;161;200.130.9.199;200.130.9.7
 
 1) Data-hora (resolução de minuto): 2021-08-24 19:17:00
-2) Latitude: -15.816786
-3) Longitude: -47.943379
+2) latitudeitude: -15.816786
+3) longitudegitude: -47.943379
 4) Id do PoP(sempre 1): 1
 5) Id do Cliente: 55
 6) TTL do pior ip de origem: 123
@@ -73,12 +73,12 @@ OBS:
 
 **Pior Destino**: Ip daquele cliente que, atuando como destino tem o maior percentual de requisições não atendidas. O critério de desempate é a quantidade absoluta de requisições.
 ## pcap_to_tc_serv
-Este script em Python implementa um processador de tráfego coletado que gera uma contagem dos pacotes de cada serviço utlizado pelo cliente a partir do tráfego TCP. A partir destas informações pode-se verificar a distribuição de serviços utilizados pelo cliente e posteriormente traçar um perfil de utilização por cliente.
+Este script em Python implementa um processador de tráfego coletado que gera uma contagem dos pacotes de cada serviço utilizado pelo cliente a partir do tráfego TCP. A partir destas informações pode-se verificar a distribuição de serviços utilizados pelo cliente e posteriormente traçar um perfil de utilização.
 
 O script é executado utilizando "pipe" na saída do TCPDump ao ler um arquivo PCAP.
 
 ```Shell
-tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} tcp | python3 filter_latlon.py
+tcpdump -n -i bond1 -tttt -vvv -r ${PCAP} tcp | python3 filter_latitudelongitude.py
 ```
 
 O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e possui formatação de acordo com o exemplo a seguir.
@@ -86,8 +86,8 @@ O arquivo de saída do processador, está no padrão aceito pelo Tinycubes e pos
 2021-08-24 18:58:00;-15.795423;-47.873152;1;58;59;5;1;18;2
 
 1) data-hora (resolução de minuto): 2021-08-24 18:58:00
-2) lat: -15.795423
-3) lon: -47.873152
+2) latitude: -15.795423
+3) longitude: -47.873152
 4) id_pop (sempre 1): 1
 5) id_cliente: 58
 6) ttl: 59
@@ -137,8 +137,8 @@ O programa gera arquivos, a cada minuto, no padrão aceito pelo Tinycubes e poss
 2021-12-31 11:11:00;-15.795423;-47.873152;1;58;60;6;0;0;1050
 
 1) data no formato YYYY-MM-DD hh:mm:00: 2021-12-31 11:11:00
-2) lat: -15.795423
-3) lon: -47.873152
+2) latitude: -15.795423
+3) longitude: -47.873152
 4) id do pop(sempre 1): 1
 5) id_cliente: 58
 6) ttl: 60
