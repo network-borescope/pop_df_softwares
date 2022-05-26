@@ -21,11 +21,14 @@ T=360
 D=`date +"%Y-%m-%d-%H-%M" -d "+1 minute"`
 DB=`date +"%Y-%m-%d %H:%M:00" -d "+1 minute +$T seconds"`
 DA=`date +"%Y-%m-%d %H:%M:00" -d "+1 minute"`
-echo "DA = $DA" "DB = $DB"
+PCAP_SUBDIR=`date +"%Y%m"`
+#echo "DA = $DA" "DB = $DB"
+#echo ${PCAP_SUBDIR}
+mkdir pcap/${PCAP_SUBDIR}
 
 F=syn_dns_ether_${T}s_${D}.pcap
-TEMP=pcap/"temp_$F"
-PCAP=pcap/${F}
+TEMP=pcap/${PCAP_SUBDIR}/"temp_$F"
+PCAP=pcap/${PCAP_SUBDIR}/${F}
 F2=out_syn_dns_ether_${T}s_${D}.txt
 internal_ether="cc:4e:24:42:55:0d"
 
